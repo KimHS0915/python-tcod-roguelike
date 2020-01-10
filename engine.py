@@ -55,7 +55,7 @@ def main():
     key = libtcod.Key()
     mouse = libtcod.Mouse()
 
-    game_state = GameStates.PLAYER_TURN
+    game_state = GameStates.PLAYERS_TURN
 
     while not libtcod.console_is_window_closed():
         libtcod.sys_check_for_event(libtcod.EVENT_KEY_PRESS, key, mouse)
@@ -79,7 +79,7 @@ def main():
 
         player_turn_results = []
 
-        if move and game_state == GameStates.PLAYER_TURN:
+        if move and game_state == GameStates.PLAYERS_TURN:
             dx, dy = move
 
             destination_x = player.x + dx
@@ -96,13 +96,28 @@ def main():
 
                     fov_recompute = True
 
-                game_sate = GameStates.ENEMY_TURN
+                game_state = GameStates.ENEMY_TURN
 
         if exit:
             return True
         
         if fullscreen:
             libtcod.console_set_fullscreen(not libtcod.console_is_fullscreen())
+        
+        for player_turn_result in player_turn_results:
+            message = player_turn_result.get('message')
+            dead_entity = player_turn_result.get('dead')
+
+            if message:
+                print(message)
+            
+            if dead_entity:
+                if dead_entity == player:
+                    message, game_state = kill_player(dead_entity)
+                else:
+                    message = kill_monster(dead_entity)
+                
+                print(message)
 
         if game_state == GameStates.ENEMY_TURN:
             for entity in entities:
