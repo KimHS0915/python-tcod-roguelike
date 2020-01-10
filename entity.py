@@ -34,7 +34,7 @@ class Entity:
         self.y += dy
         
     
-    def move_towrads(self, target_x, target_y, game_map, entities):
+    def move_towards(self, target_x, target_y, game_map, entities):
         dx = target_x - self.x
         dy = target_y - self.y
         distance = math.sqrt(dx ** 2 + dy ** 2)
