@@ -57,7 +57,7 @@ class Inventory:
         results = []
 
         item.x = self.owner.x
-        item.y = self.owner.yellow
+        item.y = self.owner.y
         
         self.remove_item(item)
         results.append({
