@@ -109,8 +109,8 @@ def cast_confuse(*args, **kwargs):
                 'You cannot target a tile outside your field of view.', libtcod.yellow)})
     
     for entity in entities:
-        if entity.x == target_x and entity.y == target_y and target.ai:
-            condused_ai = ConfusedMonster(entity.ai, 10)
+        if entity.x == target_x and entity.y == target_y and entity.ai:
+            confused_ai = ConfusedMonster(entity.ai, 10)
 
             confused_ai.owner = entity
             entity.ai = confused_ai
