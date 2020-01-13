@@ -147,7 +147,7 @@ class GameMap:
                         targeting=True,
                         targeting_message=Message('Left-click a target tile for the fireball, or right-click to cancel', libtcod.light_cyan),
                         damage=12,
-                        maximum_range=3)
+                        radius=3)
                     item = Entity(
                         x, y, '#', libtcod.red, 'Fireball Scroll',
                         render_order=RenderOrder.ITEM, item=item_component)
