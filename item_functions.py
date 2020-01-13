@@ -118,7 +118,7 @@ def cast_confuse(*args, **kwargs):
             results.append({
                 'consumed': True,
                 'message': Message(
-                    'The eyes of the {entity.name} look vacant, as he starts to stumble around!',
+                    f'The eyes of the {entity.name} look vacant, as he starts to stumble around!',
                     libtcod.light_green)})
 
             break
