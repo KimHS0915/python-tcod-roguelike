@@ -164,13 +164,13 @@ class GameMap:
             y = randint(room.y1 + 1, room.y2 - 1)
 
             if not any([entity for entity in entities if entity.x == x and entity.y == y]):
-                item:choice = random_choice_from_dict(item_chances)
+                item_choice = random_choice_from_dict(item_chances)
 
-                if item_chance == 'healing_potion':
+                if item_choice == 'healing_potion':
                     item_component = Item(use_function=heal, amount=40)
                     item = Entity(x, y, '!', libtcod.violet, 'Healing Potion',
                         render_order=RenderOrder.ITEM, item=item_component)
-                elif item_chance == 'fireball_scroll':
+                elif item_choice == 'fireball_scroll':
                     item_component = Item(
                         use_function=cast_fireball,
                         targeting=True,

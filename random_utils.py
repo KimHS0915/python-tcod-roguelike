@@ -17,7 +17,7 @@ def random_choice_index(chances):
     for w in chances:
         running_sum += w
 
-        if random_chance <= runnnig_sum:
+        if random_chance <= running_sum:
             return choice
         choice += 1
 
