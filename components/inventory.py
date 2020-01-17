@@ -73,6 +73,6 @@ class Inventory:
         
         self.remove_item(item)
         results.append({
-            'item_dropjped': item, 'message': Message(f'You dropped the {item.name}', libtcod.yellow)})
+            'item_dropped': item, 'message': Message(f'You dropped the {item.name}', libtcod.yellow)})
 
         return results
