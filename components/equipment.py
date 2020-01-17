@@ -20,6 +20,7 @@ class Equipment:
 
     @property
     def power_bonus(self):
+        bonus = 0
 
         if self.main_hand and self.main_hand.equippable:
             bonus += self.main_hand.equippable.power_bonus
@@ -31,6 +32,7 @@ class Equipment:
 
     @property
     def defense_bonus(self):
+        bonus = 0
 
         if self.main_hand and self.main_hand.equippable:
             bonus += self.main_hand.equippable.defense_bonus
