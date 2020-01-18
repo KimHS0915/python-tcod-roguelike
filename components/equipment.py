@@ -13,8 +13,8 @@ class Equipment:
         if self.main_hand and self.main_hand.equippable:
             bonus += self.main_hand.equippable.max_hp_bonus
         
-        if self.off_hand and self.off_hand.eqippable:
-            bonus += self.off_hand.eqippable.max_hp_bonus
+        if self.off_hand and self.off_hand.equippable:
+            bonus += self.off_hand.equippable.max_hp_bonus
         
         return bonus
 
@@ -25,8 +25,8 @@ class Equipment:
         if self.main_hand and self.main_hand.equippable:
             bonus += self.main_hand.equippable.power_bonus
         
-        if self.off_hand and self.off_hand.eqippable:
-            bonus += self.off_hand.eqippable.power_bonus
+        if self.off_hand and self.off_hand.equippable:
+            bonus += self.off_hand.equippable.power_bonus
         
         return bonus
 
@@ -37,8 +37,8 @@ class Equipment:
         if self.main_hand and self.main_hand.equippable:
             bonus += self.main_hand.equippable.defense_bonus
         
-        if self.off_hand and self.off_hand.eqippable:
-            bonus += self.off_hand.eqippable.defense_bonus
+        if self.off_hand and self.off_hand.equippable:
+            bonus += self.off_hand.equippable.defense_bonus
         
         return bonus
 
